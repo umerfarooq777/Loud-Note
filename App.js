@@ -22,7 +22,7 @@ import Task from './components/task';
 const App= () => {
  
   return (<>
-    <View>
+    <View style={styles.container}>
       <Text> Hello World  </Text>
     </View>
   </>
@@ -30,6 +30,13 @@ const App= () => {
   );
 };
 
-
+const styles = StyleSheet.create({
+  container:{
+  flex: 1,
+  backgroundColor: '#ffff',
+  alignItems: 'center' ,
+  justifyContent: 'center',
+  },
+  });
 
 export default App;
