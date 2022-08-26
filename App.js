@@ -17,13 +17,15 @@ import {
   View,
 } from 'react-native';
 import Header1 from './components/header'
+import Task from './components/task';
 
 const App= () => {
  
-  return (
+  return (<>
     <View>
-      <Header1/>
+      <Text> Hello World  </Text>
     </View>
+  </>
    
   );
 };
