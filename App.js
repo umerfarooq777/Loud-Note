@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {
   SafeAreaView,
+  TouchableOpacity,
   ScrollView,
+  FlatList,
   Button,
   StyleSheet,
   Text,
@@ -16,13 +18,13 @@ const App = () => {
   const [age, setAge] = useState(0);
 
   const [people, setPeople] = useState([
-    {name: 'shaun', key: '1'},
-    {name: 'yoshi', key: '2'},
-    {name: 'mario', key: '3'},
-    {name: 'luigi', key: '4'},
-    {name: 'peach', key: '5'},
-    {name: 'toad', key: '6'},
-    {name: 'bowser', key: '7'},
+    {name: 'shaun', id: '1'},
+    {name: 'yoshi', id: '2'},
+    {name: 'mario', id: '3'},
+    {name: 'luigi', id: '4'},
+    {name: 'peach', id: '5'},
+    {name: 'toad', id: '6'},
+    {name: 'bowser', id: '7'},
   ]);
   // const ButtonClick = () => {
   //   if (value === 'Default Value') {
@@ -32,12 +34,28 @@ const App = () => {
   //   }
   // };
 
+  const logId = (id) => {
+         console.log("🚀 ~ file: App.js ~ line 38 ~ logID ~ id", id)     
+    };
+
+
   return (
     <>
       <View style={styles.container}>
 
 
-        <ScrollView>
+
+     <FlatList
+        // numColumns={3}
+        keyExtractor={(item)=>item.id}
+        data={people}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={()=> logId(item.name)}>
+            <Text style={styles.item}>{item.name}</Text>
+          </TouchableOpacity>
+      )}
+      />
+        {/* <ScrollView>
         
         {people &&
           people.map(item => {
@@ -47,7 +65,7 @@ const App = () => {
               </View>
             );
           })}
-          </ScrollView>
+          </ScrollView> */}
 
        
       </View>
