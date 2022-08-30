@@ -23,7 +23,7 @@ const App= () => {
  
   return (<>
     <View style={styles.container}>
-      <Text> Hello World  </Text>
+      <Text style={styles.textWhite}> Hello G  </Text>
     </View>
   </>
    
@@ -33,10 +33,17 @@ const App= () => {
 const styles = StyleSheet.create({
   container:{
   flex: 1,
-  backgroundColor: '#ffff',
+  textShadowColor:'white',
+  backgroundColor: 'green',
   alignItems: 'center' ,
   justifyContent: 'center',
   },
+  textWhite:{
+color:'#fff'
+  }
+
+
+
   });
 
 export default App;
