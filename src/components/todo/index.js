@@ -10,15 +10,12 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import AddTodo from './addTodo';
 import Header from './header';
 import TodoItem from './todoItem';
 
 function Flatlist() {
-  const [todos, setTodos] = useState([
-    {text: 'buy coffee', key: '1'},
-    {text: 'create an app', key: '2'},
-    {text: 'play on the switch', key: '3'},
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
@@ -26,6 +23,18 @@ function Flatlist() {
     });
     }
 
+    const submitHandler = (text) => {
+      if (text === '' || text === '') {
+        alert("Input cannot be empty...")
+      } else {
+        setTodos((prevTodos) => {
+        return [
+        { text: text, key: Math.random().toString() },
+        ...prevTodos
+        ];
+        })           
+      }
+    }
 
 
 
@@ -40,7 +49,7 @@ function Flatlist() {
       <View style={styles.content}>
         {/* to form */}
 
-
+      <AddTodo submitHandler={submitHandler}/>
 
         <View style={styles.list}>
            {/* display todo */}
@@ -75,7 +84,7 @@ const styles = StyleSheet.create({
 padding:20
   },
   list:{
-    marginTop:50,
+    marginTop:20,
     // backgroundColor:'#333'
   },
   textWhite: {
