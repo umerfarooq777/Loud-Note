@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import Flatlist from './src/components/Flatlist';
+import NativeBase from './src/components/native base';
 import Todo from './src/components/todo';
 
 const App = () => {
@@ -18,8 +19,21 @@ const App = () => {
 
   return (
     <>
-      <Todo />
+
+    <NativeBase/>
+      {/* <Todo /> */}
       {/* <Flatlist/> */}
+
+
+
+
+
+
+
+
+
+
+
       {/* <View>
   <Text>helllo Work</Text>
 </View> */}
