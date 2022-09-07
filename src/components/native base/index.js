@@ -11,16 +11,14 @@ import {
   View,
 } from 'react-native';
 
+import { NativeBaseProvider, Box } from "native-base";
+
 export default function NativeBase(){
 
 
   return (
     <>
-      <View style={styles.container}>
-
-<Text>hello eeefeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarcrecervvervvr vr vr vrvr vr vrvr</Text>
-
-      </View>
+      <Box>hello</Box>
 
       
     </>

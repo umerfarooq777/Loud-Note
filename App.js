@@ -1,3 +1,4 @@
+import { NativeBaseProvider } from 'native-base';
 import React, {useState} from 'react';
 import {
   SafeAreaView,
@@ -19,9 +20,13 @@ const App = () => {
 
   return (
     <>
-
+{/* <NativeBaseProvider>
     <NativeBase/>
-      {/* <Todo /> */}
+</NativeBaseProvider> */}
+
+
+
+      <Todo />
       {/* <Flatlist/> */}
 
 
