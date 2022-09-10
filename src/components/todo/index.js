@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {
   SafeAreaView,
   TouchableOpacity,
-  ScrollView,
   FlatList,
   Button,
   StyleSheet,
   Text,
+  ScrollView,
   TextInput,
   View,
 } from 'react-native';
@@ -50,6 +50,7 @@ function Flatlist() {
         {/* to form */}
 
       <AddTodo submitHandler={submitHandler}/>
+<ScrollView showsVerticalScrollIndicator={false}>
 
         <View style={styles.list}>
            {/* display todo */}
@@ -59,9 +60,10 @@ function Flatlist() {
           renderItem={({item})=>(
             // <Text style={styles.textWhite}> {item.text}</Text>
             <TodoItem item={item} pressHandler={pressHandler}/>
-          )}
-          />
+            )}
+            />
         </View>
+            </ScrollView>
 
 
 

@@ -5,14 +5,17 @@ import {
   Text,
   View
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+// import { LinearGradient } from 'expo-linear-gradient';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function TodoItem({item,pressHandler}) {
   return (
   <TouchableOpacity style={styles.box}>
       <Text style={styles.itemText}>{item.text}</Text>
       <TouchableOpacity onPress={()=>pressHandler(item.key)}>
-      <Text style={styles.dltItem}>X</Text>
+      {/* <Text style={styles.dltItem}>X</Text> */}
+      {/* <Icon name=''></Icon> */}
+      <Icon style={styles.dltItem} name="trash-bin" size={30}></Icon>
       </TouchableOpacity>
   </TouchableOpacity>
   )
@@ -44,18 +47,18 @@ itemText:{
 
 },
 dltItem:{
-  paddingLeft:20,
-    color:'#824AB7',
-    backgroundColor:'#fff',
-    fontSize:15,
-    marginRight:10,
-    padding:3,
+  // paddingLeft:20,
+    color:'#fff',
+    // backgroundColor:'#fff',
+    fontSize:25,
+    marginRight:15,
+    // padding:-2,
     // textAlign:'center',
     fontWeight:'bold',
-    borderBottomLeftRadius: 5,
-    borderBottomRightRadius: 5,
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
+    // borderBottomLeftRadius: 5,
+    // borderBottomRightRadius: 5,
+    // borderTopLeftRadius: 5,
+    // borderTopRightRadius: 5,
     
 
 }
